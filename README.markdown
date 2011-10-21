@@ -6,7 +6,7 @@ The jQuery resolution switch plugin helps with loading of large images by allowi
 Useage
 ----------
 
-The high-resolution version of the image needs to have the name of the low-resolution image followed by a suffix (_high is the default suffix) and then the file extension. (i.e. myprofilepic.jpg would have a high-res image named myprofilepic_high.jpg).
+The high-resolution version of the image needs to have the name of the low-resolution image followed by the suffix '_high' and then the file extension. (i.e. myprofilepic.jpg would have a high-res image named myprofilepic_high.jpg).
 
 Use a jQuery selector to apply the behavior to the images you want to load. For example, you could add a class name of "gallery-photo" to your images. Use the following to apply the behavior to your images:
 
@@ -14,19 +14,12 @@ $('gallery-photo').resolutionSwitch();
 
 The function call should be wrapped in $(document).ready() to make sure that the image tags are available in the DOM when called.
 
-Options
-----------
-
-Currently, the plugin supports only one option. To pass in the option, wrap it in a plain object {} wrapper.
-
-highresImageExtension: (String) name of the suffix to identify the high-resolution version of the image (default: '_high')
-
 Useage Example
 ----------------------
 
 The complete useage example is as follows:
 
 $(doument).ready(function() {
-  $('.gallery-photo').resolutionSwitch({highresImageExtension:'_highres'});
+  $('.gallery-photo').resolutionSwitch({highresImageExtension:'_high'});
 });
 
