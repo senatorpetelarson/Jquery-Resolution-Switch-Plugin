@@ -42,14 +42,16 @@
 					//console.log("original image loaded");
 				});
 				if(! $("#cached-images")) {
-					console.log("adding element");
-					$('body').append("<div id='cached-images'></div>");
+					$('body').append("<div id='cached-images' style='display:none'></div>");
 				}
 				image.data("associated_image",$(this));
-				image.load(function() {
-					console.log("high-res image loaded");
-					$(this).data("associated_image").attr("src",$(this).attr("src"));
-				});
+				if(!image.complete) {
+					image.load(function() {
+						$(this).data("associated_image").attr("src",$(this).attr("src"));
+					});
+				} else {
+					image.data("associated_image").attr("src",image.attr("src"));
+				}
 				$("#cached-images").append(image);
         	});
         }
